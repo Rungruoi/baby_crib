@@ -1,0 +1,11 @@
+{
+    "name": "MOMO payment basic",
+    "image": "images/momo.png",
+    "auth": "Naruto",
+    "email": "lanhktc@gmail.com",
+    "link": "https://S-Cart.Org",
+    "configGroup": "Plugins",
+    "configCode": "Payment",
+    "configKey": "MomoBasic",
+    "version": "3.2"
+}

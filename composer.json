@@ -1,0 +1,75 @@
+{
+    "name": "s-cart/s-cart",
+    "description": "Free Laravel e-commerce for business: shopping cart, cms content, and more...",
+    "keywords": ["Laravel ecommerce","SCart ecommerce", "SCart open source", "Free Shopping cart", "Laravel multiple vendor", "Laravel marketplace", "Laravel multiple store",  "S-Cart"],
+    "homepage": "https://s-cart.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lanh Le",
+            "email": "lanhktc@gmail.com"
+        }
+    ],
+    "type" : "project",
+    "require": {
+        "php": "^7.2.5",
+        "aws/aws-sdk-php": "^3.0",
+        "facade/ignition": "^2.3",
+        "fideloper/proxy": "^4.2",
+        "guzzlehttp/guzzle": "^6.3",
+        "laravel/framework": "^7.0",
+        "laravel/helpers": "^1.1",
+        "laravel/passport": "^8.4",
+        "laravel/socialite": "^4.4",
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "2.0",
+        "s-cart/core": "^4.0.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.9.1",
+        "mockery/mockery": "^1.3.1",
+        "nunomaduro/collision": "^4.1",
+        "barryvdh/laravel-debugbar": "^3.2",
+        "filp/whoops": "^2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ]
+    },
+
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+
+}
